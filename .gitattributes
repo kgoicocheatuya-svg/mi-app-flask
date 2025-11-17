@@ -1,6 +1,34 @@
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-static/uploads/* filter=lfs diff=lfs merge=lfs -text
+Set-Content -Path .gitignore -Value @"
+# Entornos virtuales
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Archivos de configuración y secretos
+instance/
+*.env
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Base de datos local
+*.sqlite3
+
+# Logs
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Archivos de testing
+.pytest_cache/
+.coverage
+
+# Archivos generados por Flask
+*.pyc
+*.pyo
+*.pyd
+"@
